@@ -1,5 +1,8 @@
 package org.launchcode.java.studios.countingcharacters;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -30,13 +33,18 @@ public class CountCharacters {
             System.out.println(c + " - " + numOfChars);
         }
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        Scanner in = new Scanner(System.in);
-        System.out.println("Enter a string:");
-        String inputString = in.nextLine();
+//        Scanner in = new Scanner(System.in);
+//        System.out.println("Enter a string:");
+//        String inputString = in.nextLine();
+
+        Path fileName = Path.of("C:\\Users\\Brenden\\Desktop\\java-practice\\chapter-one\\java-web-dev-exercises\\src\\org\\launchcode\\java\\studios\\countingcharacters\\demo.txt");
+
+        String actual = Files.readString(fileName);
+        System.out.println(actual);
 
         String sampleText = "If the product of two terms is zero then common sense says at least one of the two terms has to be zero to start with. So if you move all the terms over to one side, you can put the quadratics into a form that can be factored allowing that side of the equation to equal zero. Once you’ve done that, it’s pretty straightforward from there.";
-        printCharacterCounts(inputString);
+        printCharacterCounts(actual);
     }
 }
