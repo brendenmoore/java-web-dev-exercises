@@ -9,16 +9,21 @@ public class CountCharacters {
         String lowercaseString = aString.toLowerCase();
         char[] charactersInString = lowercaseString.toCharArray();
         HashMap<Character, Integer> charMap = new HashMap<>();
-        for (char c : charactersInString) {
-            if (!charMap.containsKey(c)) {
-                charMap.put(c, 1);
-            } else {
-                int numOfChars = charMap.get(c);
-                numOfChars++;
-                charMap.replace(c, numOfChars);
+
+        for (Character c : charactersInString) {
+            if (Character.isAlphabetic((c))){
+                if (!charMap.containsKey(c)) {
+                    charMap.put(c, 1);
+                } else {
+                    int numOfChars = charMap.get(c);
+                    numOfChars++;
+                    charMap.replace(c, numOfChars);
+                }
             }
 
+
         }
+
         for (Map.Entry<Character, Integer> characterIntegerEntry : charMap.entrySet()) {
             char c = characterIntegerEntry.getKey();
             int numOfChars = characterIntegerEntry.getValue();
