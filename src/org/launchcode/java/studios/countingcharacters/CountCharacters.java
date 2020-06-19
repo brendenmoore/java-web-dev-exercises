@@ -6,7 +6,8 @@ import java.util.Scanner;
 
 public class CountCharacters {
     public static void printCharacterCounts(String aString) {
-        char[] charactersInString = aString.toCharArray();
+        String lowercaseString = aString.toLowerCase();
+        char[] charactersInString = lowercaseString.toCharArray();
         HashMap<Character, Integer> charMap = new HashMap<>();
         for (char c : charactersInString) {
             if (!charMap.containsKey(c)) {

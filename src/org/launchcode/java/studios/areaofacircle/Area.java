@@ -30,7 +30,9 @@ public class Area {
                 System.out.print(RESET + "Please enter a positive number: ");
             }
 
+            // run until input is correct
         } while (radius == null);
+        input.close();
 
         Double area = Circle.getArea(radius);
         System.out.println("The area of a circle of radius " + radius + " is: " + area);
